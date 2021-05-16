@@ -18,7 +18,7 @@ export class GithubClientImpl implements GithubClient {
     this.token = token;
 
     this.octokit = new Octokit({
-      auth: `token ${token}`,
+      auth: `${token}`,
     });
   }
 
@@ -27,7 +27,7 @@ export class GithubClientImpl implements GithubClient {
       owner: githubConfig.orgName,
       repo: githubConfig.repositoryName,
       since: githubConfig.since,
-      sha: 'master',
+      sha: 'main',
     };
 
     if (githubConfig.until) {

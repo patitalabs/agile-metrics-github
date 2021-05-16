@@ -22,7 +22,7 @@ export class ApiMetricsService {
       });
       for (const configurationDescriptor of configurationDescriptors) {
         const githubMetricItems = await this.collectMetrics(
-          configurationDescriptor
+          configurationDescriptor.config
         );
         await coreMetricsClient.publish(
           githubMetricItems,

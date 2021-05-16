@@ -8,26 +8,22 @@ Pulls data from:
 
 - Github
 
-
 ### Env configurations
 
-````
-GITHUB_TOKEN=
-````
+Please refer to docker-compose.yml file
 
-### Configurations:
+### Endpoints
 
-
-
-#### github-config.json
+#### http://localhost:3001/metrics/
 
 ````
-[
-  {
+{
+	"shouldUpdateEntries": true,
+	"config": {
     "repositoryName": "your-repo",
     "teamName": "someTeam",
-    "orgName": "orgName/own",
+    "orgName": "orgName/owner",
     "since": "2018-12-03T00:00:00Z"
   }
-]
+}
 ````

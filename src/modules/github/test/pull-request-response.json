@@ -176,12 +176,12 @@
         "forks": 0,
         "open_issues": 1,
         "watchers": 0,
-        "default_branch": "master"
+        "default_branch": "main"
       }
     },
     "base": {
-      "label": "orgName:master",
-      "ref": "master",
+      "label": "orgName:main",
+      "ref": "main",
       "sha": "abee63992e6b26cb88af68b8f4cf8833fc63cc2c",
       "user": {
         "login": "orgName",
@@ -294,7 +294,7 @@
         "forks": 0,
         "open_issues": 1,
         "watchers": 0,
-        "default_branch": "master"
+        "default_branch": "main"
       }
     },
     "_links": {
@@ -489,12 +489,12 @@
         "forks": 0,
         "open_issues": 1,
         "watchers": 0,
-        "default_branch": "master"
+        "default_branch": "main"
       }
     },
     "base": {
-      "label": "orgName:master",
-      "ref": "master",
+      "label": "orgName:main",
+      "ref": "main",
       "sha": "7a0173d43c9464ceba26ad89a63f816a69782072",
       "user": {
         "login": "orgName",
@@ -607,7 +607,7 @@
         "forks": 0,
         "open_issues": 1,
         "watchers": 0,
-        "default_branch": "master"
+        "default_branch": "main"
       }
     },
     "_links": {

@@ -6,7 +6,6 @@ Array [
     "config": Object {
       "fake": "config",
     },
-    "serviceName": "serviceName",
     "shouldUpdateEntries": false,
   },
 ]

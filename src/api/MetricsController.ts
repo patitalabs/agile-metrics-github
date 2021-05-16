@@ -37,14 +37,12 @@ export class MetricsController {
 
   private static createRequest(req: Request): TeamMetricsRequest {
     const body = req.body;
-    const serviceName = body.serviceName || null;
     const config = body.config || null;
     const method = req.method;
 
     const shouldUpdateEntries = method === 'PUT';
 
     return {
-      serviceName,
       config,
       shouldUpdateEntries,
     };

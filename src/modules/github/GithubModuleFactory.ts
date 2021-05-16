@@ -20,6 +20,12 @@ export class GithubModuleFactory {
   }
 
   static collectorConfiguration(obj: any): GithubCollectorConfig {
-    return new GithubCollectorConfig(obj);
+    return new GithubCollectorConfig({
+      repositoryName: obj.repositoryName,
+      orgName: obj.orgName,
+      since: obj.since,
+      until: obj.until,
+      teamName: obj.teamName,
+    });
   }
 }

@@ -4,7 +4,6 @@ import { TeamMetricsRequest } from '../Types';
 describe('ApiMetricsService', () => {
   it('should fail with invalid configuration', () => {
     const teamMetricsRequest: TeamMetricsRequest = {
-      serviceName: 'serviceName',
       shouldUpdateEntries: false,
       config: { fake: 'config' },
     };
@@ -21,7 +20,6 @@ describe('ApiMetricsService', () => {
 
   it('should return existing unchanged config', () => {
     const teamMetricsRequest: TeamMetricsRequest = {
-      serviceName: 'serviceName',
       shouldUpdateEntries: false,
       config: { fake: 'config' },
     };
