@@ -1,5 +1,5 @@
 import { createLogger, format, transports } from 'winston';
-import {AppConfig} from "../config/AppConfig";
+import { AppConfig } from '../config/AppConfig';
 
 const IS_NOT_PRODUCTION = !AppConfig.isProduction();
 

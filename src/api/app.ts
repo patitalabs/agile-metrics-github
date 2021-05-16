@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { MetricsController } from './MetricsController';
-import {AppConfig} from "../config/AppConfig";
+import { AppConfig } from '../config/AppConfig';
 
 const app = express();
 app.disable('x-powered-by');

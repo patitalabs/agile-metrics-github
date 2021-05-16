@@ -2,8 +2,8 @@ import { TeamMetricsRequest } from '../Types';
 import { Logger } from '../metrics/Logger';
 import { GithubModuleFactory } from '../modules/github';
 import { GithubMetricItem } from '../modules/github/collector/Types';
-import {CoreMetricsClient} from "./CoreMetricsClient";
-import {AppConfig} from "../config/AppConfig";
+import { CoreMetricsClient } from './CoreMetricsClient';
+import { AppConfig } from '../config/AppConfig';
 
 export class ApiMetricsService {
   public static async metricsForRequest(
@@ -17,10 +17,17 @@ export class ApiMetricsService {
       Logger.info(
         `created configurations: ${JSON.stringify(configurationDescriptors)}`
       );
-      const coreMetricsClient = new CoreMetricsClient({host:AppConfig.coreMetricsUrl()});
+      const coreMetricsClient = new CoreMetricsClient({
+        host: AppConfig.coreMetricsUrl(),
+      });
       for (const configurationDescriptor of configurationDescriptors) {
-        const githubMetricItems = await this.collectMetrics(configurationDescriptor);
-        await coreMetricsClient.publish(githubMetricItems, configurationDescriptor.shouldUpdateEntries)
+        const githubMetricItems = await this.collectMetrics(
+          configurationDescriptor
+        );
+        await coreMetricsClient.publish(
+          githubMetricItems,
+          configurationDescriptor.shouldUpdateEntries
+        );
       }
       Logger.info('Done!');
     } catch (error) {

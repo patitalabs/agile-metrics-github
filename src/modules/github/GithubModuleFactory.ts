@@ -4,8 +4,7 @@ import { GithubClientImpl } from './GithubClientImpl';
 import { GithubServiceImpl } from './GithubServiceImpl';
 import { GithubCollectorService } from './collector/GithubCollectorService';
 import { GithubRepositoryImpl } from './GithubRepositoryImpl';
-import { Utils } from '../../metrics/Utils';
-import {AppConfig} from "../../config/AppConfig";
+import { AppConfig } from '../../config/AppConfig';
 
 export class GithubModuleFactory {
   private static githubService(): GithubService {
