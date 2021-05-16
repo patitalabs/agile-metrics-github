@@ -14,7 +14,7 @@ Please refer to docker-compose.yml file
 
 ### Endpoints
 
-#### http://localhost:3001/metrics/
+#### POST http://localhost:3001/metrics/
 
 ````
 {
