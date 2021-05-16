@@ -12,7 +12,7 @@ RUN yarn install --frozen-lockfile  \
 FROM node:fermium-alpine3.13
 WORKDIR /app
 COPY --from=builder /app/package.json /app/package.json
-COPY --from=builder /app/yarn.json /app/yarn.json
+COPY --from=builder /app/yarn.lock /app/yarn.json
 RUN yarn install --frozen-lockfile --production
 
 COPY --from=builder /app/dist/ /app/dist/
