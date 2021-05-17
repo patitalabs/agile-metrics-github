@@ -8,7 +8,7 @@ function checkEnvVar(...theVariables: string[]): void {
 
 export class AppConfig {
   static port(): number {
-    return (process.env.PORT as number) || 3000;
+    return (process.env.PORT || 3000) as number;
   }
 
   static isProduction(): boolean {
