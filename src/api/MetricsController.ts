@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { Logger } from '../config/Logger';
 import { TeamMetricsRequest } from '../domain/Types';
-import { appContext } from '../config/AppFactory';
+import { appContext } from '../config/AppContext';
 
 export class MetricsController {
   static postMetrics = (req: Request, res: Response): void => {
