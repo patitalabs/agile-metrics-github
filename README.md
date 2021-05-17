@@ -12,18 +12,6 @@ Pulls data from:
 
 Please refer to docker-compose.yml file
 
-### Endpoints
-
-#### POST http://localhost:3001/metrics/
-
-````
-{
-	"shouldUpdateEntries": true,
-	"config": {
-    "repositoryName": "your-repo",
-    "teamName": "someTeam",
-    "orgName": "orgName/owner",
-    "since": "2018-12-03T00:00:00Z"
-  }
-}
-````
+### API Documentation
+Please refer to ```/src/api/resources/agile-metrics-github-open-api.yml``` or in ```http://localhost:3001/ ```
+![alt tag](https://raw.githubusercontent.com/patitalabs/agile-metrics-github/main/screenshots/metrics-api-1.png) 

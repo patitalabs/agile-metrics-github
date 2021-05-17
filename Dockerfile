@@ -6,7 +6,8 @@ COPY tsconfig.json /app/
 COPY src/ /app/src
 
 RUN yarn install --frozen-lockfile  \
-    && yarn build
+    && yarn build \
+    && yarn prepare-web
 
 
 FROM node:fermium-alpine3.13
