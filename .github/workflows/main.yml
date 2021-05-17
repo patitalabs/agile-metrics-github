@@ -33,22 +33,26 @@ jobs:
 
       - name: Login to Registry
         uses: docker/login-action@v1
+        if: steps.extract_branch.outputs.branch == 'main'
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.CR_PAT }}
 
       - name: Build and push Docker images
+        if: steps.extract_branch.outputs.branch == 'main'
         uses: docker/build-push-action@v2.4.0
         with:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ghcr.io/${{ github.repository }}:latest
 
       - name: Fix coverage paths
+        if: steps.extract_branch.outputs.branch == 'main'
         run: sed -i "s|SF:/.*/src/|SF:/github/workspace/src/|g" coverage/lcov.info
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        if: steps.extract_branch.outputs.branch == 'main'
+        uses: SonarSource/sonarcloud-github-action@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
