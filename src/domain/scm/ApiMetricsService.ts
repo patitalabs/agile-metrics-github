@@ -1,12 +1,17 @@
-import { TeamMetricsRequest } from '../Types';
-import { Logger } from '../metrics/Logger';
-import { GithubModuleFactory } from '../modules/github';
-import { GithubMetricItem } from '../modules/github/collector/Types';
-import { CoreMetricsClient } from './CoreMetricsClient';
-import { AppConfig } from '../config/AppConfig';
+import { Logger } from '../../config/Logger';
+import {
+  CoreMetricsService,
+  ScmCollectorService,
+  TeamMetricsRequest,
+} from '../Types';
 
 export class ApiMetricsService {
-  public static async metricsForRequest(
+  constructor(
+    private readonly coreMetricsService: CoreMetricsService,
+    private readonly scmCollectorService: ScmCollectorService
+  ) {}
+
+  public async metricsForRequest(
     teamMetricsRequest: TeamMetricsRequest
   ): Promise<void> {
     try {
@@ -17,15 +22,13 @@ export class ApiMetricsService {
       Logger.info(
         `created configurations: ${JSON.stringify(configurationDescriptors)}`
       );
-      const coreMetricsClient = new CoreMetricsClient({
-        host: AppConfig.coreMetricsUrl(),
-      });
+
       for (const configurationDescriptor of configurationDescriptors) {
-        const githubMetricItems = await this.collectMetrics(
+        const scmMetricItems = await this.scmCollectorService.fetch(
           configurationDescriptor.config
         );
-        await coreMetricsClient.publish(
-          githubMetricItems,
+        await this.coreMetricsService.publish(
+          scmMetricItems,
           configurationDescriptor.shouldUpdateEntries
         );
       }
@@ -46,14 +49,6 @@ export class ApiMetricsService {
       `Unable to create configuration for request ${JSON.stringify(
         teamMetricsRequest
       )}`
-    );
-  }
-
-  private static async collectMetrics(
-    config: any
-  ): Promise<GithubMetricItem[]> {
-    return GithubModuleFactory.collectorInstance().fetch(
-      GithubModuleFactory.collectorConfiguration(config)
     );
   }
 }

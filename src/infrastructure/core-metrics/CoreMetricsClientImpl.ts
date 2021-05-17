@@ -1,11 +1,12 @@
 import * as axios from 'axios';
 import * as https from 'https';
 import * as http from 'http';
+import { CoreMetricsService } from '../../domain/Types';
 
 const httpsAgent = new https.Agent({ keepAlive: true });
 const httpAgent = new http.Agent({ keepAlive: true });
 
-export class CoreMetricsClient {
+export class CoreMetricsClientImpl implements CoreMetricsService {
   private readonly host: string;
 
   constructor({ host }) {

@@ -1,4 +1,4 @@
-export interface GithubMetricItem {
+export interface ScmMetricItem {
   sha: string;
   linesAdded: number;
   linesRemoved: number;
@@ -11,7 +11,7 @@ export interface GithubMetricItem {
   };
 }
 
-export class GithubCollectorConfig {
+export class ScmCollectorConfig {
   teamName: string;
   repositoryName: string;
   orgName: string;

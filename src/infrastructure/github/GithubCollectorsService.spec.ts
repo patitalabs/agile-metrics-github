@@ -1,5 +1,5 @@
-import { GithubCollectorConfig } from './Types';
-import { GithubCommit, GithubConfig, GithubService } from '../Types';
+import { ScmCollectorConfig } from '../../domain/scm/Types';
+import { GithubCommit, GithubConfig, GithubService } from './Types';
 import { GithubCollectorService } from './GithubCollectorService';
 
 function testCommit(): GithubCommit {
@@ -24,15 +24,13 @@ describe('GithubCollectorsService', () => {
   );
 
   it('should fetch githubMetrics', async () => {
-    const githubCollectorConfig: GithubCollectorConfig = new GithubCollectorConfig(
-      {
-        teamName: 'someTeamName',
-        repositoryName: 'someRepoName',
-        orgName: 'someOrgName',
-        since: '2018-11-20',
-        until: '2020-11-20',
-      }
-    );
+    const githubCollectorConfig: ScmCollectorConfig = new ScmCollectorConfig({
+      teamName: 'someTeamName',
+      repositoryName: 'someRepoName',
+      orgName: 'someOrgName',
+      since: '2018-11-20',
+      until: '2020-11-20',
+    });
 
     const data = await githubCollectorsService.fetch(githubCollectorConfig);
     expect(data).toMatchSnapshot();

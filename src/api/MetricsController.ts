@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { ApiMetricsService } from './ApiMetricsService';
-import { TeamMetricsRequest } from '../Types';
-import { Logger } from '../metrics/Logger';
+import { Logger } from '../config/Logger';
+import { TeamMetricsRequest } from '../domain/Types';
+import { appContext } from '../config/AppFactory';
 
 export class MetricsController {
   static postMetrics = (req: Request, res: Response): void => {
@@ -32,7 +32,7 @@ export class MetricsController {
 
   private static async collectMetrics(req: Request): Promise<void> {
     const teamMetricRequest = this.createRequest(req);
-    return ApiMetricsService.metricsForRequest(teamMetricRequest);
+    return appContext.apiMetricsService.metricsForRequest(teamMetricRequest);
   }
 
   private static createRequest(req: Request): TeamMetricsRequest {

@@ -1,5 +1,5 @@
 import { GithubCommit, PullRequestStats } from './Types';
-import { Utils } from '../../metrics/Utils';
+import { DateUtils } from '../../utils/DateUtils';
 
 export class Converters {
   static toGithubCommit(
@@ -24,7 +24,7 @@ export class Converters {
     const linkedPr = commitPrResponse.items[0];
     return {
       prId: linkedPr.number,
-      numberOfDaysOpen: Utils.daysBetween(
+      numberOfDaysOpen: DateUtils.daysBetween(
         new Date(linkedPr.created_at),
         new Date(linkedPr.closed_at)
       ),
