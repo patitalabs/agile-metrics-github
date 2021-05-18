@@ -47,12 +47,16 @@ jobs:
           tags: ghcr.io/${{ github.repository }}:latest
 
       - name: Fix coverage paths
-#        if: ${{ github.ref == 'refs/heads/main' }}
         run: sed -i "s|SF:/.*/src/|SF:/github/workspace/src/|g" coverage/lcov.info
 
       - name: SonarCloud Scan
-#        if: ${{ github.ref == 'refs/heads/main' }}
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: CodeCov
+      - uses: codecov/codecov-action@v1
+        with:
+          files: coverage/lcov.info
+          verbose: true
