@@ -12,8 +12,3 @@ export interface CoreMetricsService {
 export interface ScmCollectorService {
   fetch(scmCollectorConfig: ScmCollectorConfig): Promise<ScmMetricItem[]>;
 }
-
-
-export interface fOO {
-  fetch(scmCollectorConfig: ScmCollectorConfig): Promise<ScmMetricItem[]>;
-}
