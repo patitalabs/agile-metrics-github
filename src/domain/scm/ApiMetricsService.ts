@@ -16,9 +16,10 @@ export class ApiMetricsService {
   ): Promise<void> {
     try {
       Logger.info(`teamMetricsRequest: ${JSON.stringify(teamMetricsRequest)}`);
-      const configurationDescriptors = ApiMetricsService.createConfigurationDescriptorsForRequest(
-        teamMetricsRequest
-      );
+      const configurationDescriptors =
+        ApiMetricsService.createConfigurationDescriptorsForRequest(
+          teamMetricsRequest
+        );
       Logger.info(
         `created configurations: ${JSON.stringify(configurationDescriptors)}`
       );

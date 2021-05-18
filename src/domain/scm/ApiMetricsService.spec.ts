@@ -24,9 +24,10 @@ describe('ApiMetricsService', () => {
       config: { fake: 'config' },
     };
     const referenceDate = new Date('2019-02-12');
-    const generatedConfigs = ApiMetricsService.createConfigurationDescriptorsForRequest(
-      teamMetricsRequest
-    );
+    const generatedConfigs =
+      ApiMetricsService.createConfigurationDescriptorsForRequest(
+        teamMetricsRequest
+      );
     expect(generatedConfigs).toMatchSnapshot();
   });
 });

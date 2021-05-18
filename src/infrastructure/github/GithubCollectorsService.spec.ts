@@ -19,9 +19,8 @@ describe('GithubCollectorsService', () => {
       Promise.resolve([testCommit()]),
   };
 
-  const githubCollectorsService: GithubCollectorService = new GithubCollectorService(
-    githubService
-  );
+  const githubCollectorsService: GithubCollectorService =
+    new GithubCollectorService(githubService);
 
   it('should fetch githubMetrics', async () => {
     const githubCollectorConfig: ScmCollectorConfig = new ScmCollectorConfig({
