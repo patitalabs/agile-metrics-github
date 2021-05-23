@@ -6,7 +6,7 @@ import { GithubClientImpl } from '../infrastructure/github/GithubClientImpl';
 import { GithubRepositoryImpl } from '../infrastructure/github/GithubRepositoryImpl';
 import { GithubServiceImpl } from '../infrastructure/github/GithubServiceImpl';
 import { CoreMetricsService, ScmCollectorService } from '../domain/Types';
-import { ApiMetricsService } from '../domain/scm/ApiMetricsService';
+import { ApiMetricsService } from '../domain/source-control-management/ApiMetricsService';
 
 function coreMetricsService(): CoreMetricsService {
   return new CoreMetricsClientImpl({

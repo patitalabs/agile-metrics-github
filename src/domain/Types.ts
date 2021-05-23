@@ -1,4 +1,4 @@
-import { ScmCollectorConfig, ScmMetricItem } from './scm/Types';
+import { ScmCollectorConfig, ScmMetricItem } from './source-control-management/Types';
 
 export interface TeamMetricsRequest {
   shouldUpdateEntries: boolean;

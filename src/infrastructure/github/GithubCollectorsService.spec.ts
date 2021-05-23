@@ -1,4 +1,4 @@
-import { ScmCollectorConfig } from '../../domain/scm/Types';
+import { ScmCollectorConfig } from '../../domain/source-control-management/Types';
 import { GithubCommit, GithubConfig, GithubService } from './Types';
 import { GithubCollectorService } from './GithubCollectorService';
 

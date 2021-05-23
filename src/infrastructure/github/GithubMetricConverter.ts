@@ -1,5 +1,5 @@
 import { GithubCommit } from './Types';
-import { ScmCollectorConfig, ScmMetricItem } from '../../domain/scm/Types';
+import { ScmCollectorConfig, ScmMetricItem } from '../../domain/source-control-management/Types';
 
 export class GithubMetricConverter {
   static toMetricItem(
