@@ -1,5 +1,8 @@
 import { GithubMetricConverter } from './GithubMetricConverter';
-import { ScmCollectorConfig, ScmMetricItem } from '../../domain/source-control-management/Types';
+import {
+  ScmCollectorConfig,
+  ScmMetricItem,
+} from '../../domain/source-control-management/Types';
 import { GithubService } from './Types';
 import { ScmCollectorService } from '../../domain/Types';
 
