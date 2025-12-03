@@ -18,7 +18,7 @@
     "@octokit/rest": "^18.12.0",
     "axios": "^1.7.8",
     "bottleneck": "^2.19.5",
-    "express": "4.21.2",
+    "express": "4.22.0",
     "winston": "^3.3.3"
   },
   "engines": {
